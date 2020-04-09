@@ -12,19 +12,19 @@ import datastore
 
 # Update variables below according to your infrastructure
 # You only need this if you want to test lambda code locally
-syncQueueUrl = "https://sqs.us-east-1.amazonaws.com/xxxxxxxxxx/TextractPipeline-SyncJobs0FE0C444-BBR6E631F0I6"
-asyncQueueUrl = "https://sqs.us-east-1.amazonaws.com/xxxxxxxxxx/TextractPipeline-AsyncJobsE9347181-1SV1MLXM1UILD"
-bucketName = "textractpipeline-documentsbucket9ec9deb9-ofohi06s79gi"
+syncQueueUrl = "https://sqs.us-east-1.amazonaws.com/211832075260/TextractPipeline-AsyncJobs"
+asyncQueueUrl = "https://sqs.us-east-1.amazonaws.com/211832075260/TextractPipeline-AsyncJobs"
+bucketName = "cbdbucket"
 
-documentsTableName = "TextractPipeline-DocumentsTable7E808EE5-8IXG1Z8GJDHB"
-outputTableName = "TextractPipeline-OutputTable875D8E18-13GV0UL4BOW6R"
+documentsTableName = "Textract_Document_Table"
+outputTableName = "Textract_OutputTable"
 
-snsTopic = "arn:aws:sns:us-east-1:xxxxxxxxxx:TextractPipeline-JobCompletionF65D4017-ASSENX3JLRKZ"
-snsRole = "arn:aws:iam::xxxxxxxxxx:role/TextractPipeline-TextractServiceRole720C3B18-BS7XGG84Z4WH"
+snsTopic = "arn:aws:sns:us-east-1:211832075260:AWS_Textract_Topic"
+snsRole ="arn:aws:iam::211832075260:instance-profile/Textract_Sample_Role"
 
-s3Image = "employmentapp.png"
-s3Pdf = "pdfdoc.pdf"
-s3LargePdf = "pdfdoc.pdf"
+s3Image = "annual_report_P21.PNG"
+s3Pdf = "CBD_Annual_Report.pdf"
+s3LargePdf = "cbd-annual-report-2018-8may.pdf"
 
 def clearEnvironment():
     os.environ['SYNC_QUEUE_URL'] = ""
